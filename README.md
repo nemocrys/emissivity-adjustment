@@ -13,11 +13,19 @@ If you use this code in your research, please cite our article:
 
 ## Spectral radiance
 
-In the script `spectral_radiance.py` the integral of the spectral radiance function is used to convert the measured temperature. The computation is performed as a fixed point iteration, it is most accurate.
+In the script `spectral_radiance.py` the integral of the [spectral radiance function](https://en.wikipedia.org/wiki/Planck%27s_law)
+
+![Planck's law](Planck-law.gif)
+
+is used to convert the measured temperature. The computation is performed as a fixed point iteration, it is most accurate.
 
 ## Wien approximation
 
-The Wien approximation for the blackbody radiation spectrum is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high wavelengths. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in `wien_approximation.py`.
+The [Wien approximation](https://en.wikipedia.org/wiki/Wien_approximation) for the blackbody radiation spectrum
+
+![Wien approximation](wien-approximation.gif)
+
+is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high wavelengths. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in `wien_approximation.py`.
 
 
 ## Acknowledgements
