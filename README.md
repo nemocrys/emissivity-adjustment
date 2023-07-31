@@ -22,11 +22,13 @@ This repository provides two ways for emissivity adjustment. In the top of the s
   - `l1`: minimum wavelength, in meter
   - `l2`: maximum wavelength, in meter
  
- It is recommended to use the script `spectral_radiance.py`, because the computation is more accurate (even though it takes a little longer).
+ It is recommended to use the script [spectral_radiance.py](spectral_radiance.py), because the computation is more accurate (even though it takes a little longer).
+
+To change emissivity of complete images use [convert_ir_image.py](convert_ir_image.py).
 
 ### Spectral radiance
 
-In the script `spectral_radiance.py` the integral of the [spectral radiance function](https://en.wikipedia.org/wiki/Planck%27s_law)
+In the script [spectral_radiance.py](spectral_radiance.py) the integral of the [spectral radiance function](https://en.wikipedia.org/wiki/Planck%27s_law)
 
 ![Planck's law](Planck-law.gif)
 
@@ -38,7 +40,7 @@ The [Wien approximation](https://en.wikipedia.org/wiki/Wien_approximation) for t
 
 ![Wien approximation](wien-approximation.gif)
 
-is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high wavelengths. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in `wien_approximation.py`.
+is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high wavelengths. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in [wien_approximation.py](wien_approximation.py).
 
 ## Acknowledgements
 
