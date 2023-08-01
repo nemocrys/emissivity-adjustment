@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/464367892.svg)](https://zenodo.org/badge/latestdoi/464367892)
 # emissivity-adjustment
 
 Adjustment of emissivities in radiation-based temperature measurement.
@@ -7,9 +8,9 @@ This is useful in cases where the emissivity is unknown during measurement: temp
 The project is developed and maintained by the [**Model experiments group**](https://www.ikz-berlin.de/en/research/materials-science/section-fundamental-description#c486) at the Leibniz Institute for Crystal Growth (IKZ).
 
 ### Referencing
-If you use this code in your research, please cite our article:
+If you use this code in your research, please cite this repository:
 
-> TODO
+> A. Wintzer, K. Dadzis: github.com/nemocrys/emissivity-adjustment, [https://doi.org/10.5281/zenodo.8202759](https://zenodo.org/badge/latestdoi/464367892).
 
 ## Usage
 
