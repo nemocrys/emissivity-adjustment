@@ -10,7 +10,7 @@ t1 = 160+273.15  # measured temperature [K]
 eps1 = 0.95  # emissivity during measurement [-]
 
 def eps2(T):  # This may be temperature dependent
-    return 1.03
+    return .5
     # T -= 273.15  # using °C in the definition
     # if T < 150:
     #     return 0.35
@@ -54,27 +54,26 @@ KB = 1.38064852e-23  # J/K, Boltzmann constant
 # Calculation
 ############################
 
-def integral(x_min, x_max, eps):
-    dx = (x_max - x_min) / res
-    x = np.arange(x_min + dx/2, x_max + dx/2, dx)
-    val = (eps * x**3/ (np.exp(x) - 1) * dx).sum()
+f1 = C/l2
+f2 = C/l1
+
+def integral(f_min, f_max, eps, t):
+    df = (f_max - f_min) / res
+    f = np.arange(f_min + df/2, f_max + df/2, df)
+    val = (eps * 2 * H * f**3 / C**2 / (np.exp(H*f / (KB * t)) - 1) * df).sum()
     return val
-
-
-x = lambda lmbd, t: H * C / (KB * t * lmbd)
-
 
 def compute_temperature(t1, print_=False):
     """Compute temperature with changed emissivity"""
     t2 = t1
     dt = 1 + tol
     i = 0
-    integral_1 = integral(x(l2, t1), x(l1, t1), eps1)
+    integral_1 = integral(f1, f2, eps1, t1)
 
     converged = True
     while dt > tol:
-        integral_2 = integral(x(l2, t2), x(l1, t2), eps2(t2))
-        t2_new = t1 * (integral_1 / integral_2) ** 0.25
+        integral_2 = integral(f1, f2, eps2(t2), t2)
+        t2_new = t2 * (integral_1 / integral_2)
         dt = abs(t2 - t2_new)
         t2_new = t2* (1-relaxation) + t2_new * relaxation  # relaxation
         t2 = t2_new
