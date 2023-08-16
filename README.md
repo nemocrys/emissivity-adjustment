@@ -41,7 +41,7 @@ The [Wien approximation](https://en.wikipedia.org/wiki/Wien_approximation) for t
 
 ![Wien approximation](wien-approximation.gif)
 
-is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high wavelengths. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in [wien_approximation.py](wien_approximation.py).
+is accurate for short wavelength radiation and, thus, provides a simple way for adjustment of emissivities at high frequencies. It is faster but, in general, less accurate than the integration of the spectral radiance. It is implemented in [wien_approximation.py](wien_approximation.py).
 
 ## Acknowledgements
 
